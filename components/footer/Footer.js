@@ -49,7 +49,7 @@ export default function App() {
           
           {/* Hotel Name and Socials Section */}
           <div className="md:col-span-3 lg:col-span-5">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold tracking-tight">Hôtel Céleste</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold tracking-tight">Casa Lumière</h2>
             <p className="mt-4 text-gray-400">
               Experience unparalleled luxury and comfort. Your perfect escape awaits.
             </p>
