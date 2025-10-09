@@ -90,7 +90,7 @@ export default function Testimonials() {
                 </div>
                 
                 <blockquote className="mt-4 text-gray-600 italic border-l-4 border-indigo-100 pl-4">
-                  "{testimonial.review}"
+                  {testimonial.review}
                 </blockquote>
               </div>
             </div>
