@@ -33,10 +33,10 @@ export default function App() {
       { name: 'Gallery', href: '/gallery' },
     ],
     about: [
-      { name: 'About Us', href: '/about' },
+      { name: 'About Us', href: '/aboutus' },
       { name: 'Contact', href: '/contact' },
       { name: 'FAQ', href: '/faq' },
-      { name: 'Careers', href: '/careers' },
+      { name: 'Events', href: '/events' },
     ],
   };
 
