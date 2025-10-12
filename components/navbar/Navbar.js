@@ -76,7 +76,7 @@ const Navbar = () => {
           <div>
             <h3 className="font-semibold text-[#FFE100] mb-2">Dining</h3>
             <ul className="space-y-1 text-sm">
-              <li><Link href="/dining/fine" className="hover:text-zinc-300">Fine Dining</Link></li>
+              <li><Link href="/dining" className="hover:text-zinc-300">Fine Dining</Link></li>
               <li><Link href="/dining/lounge" className="hover:text-zinc-300">Rooftop Lounge</Link></li>
               <li><Link href="/dining/bar" className="hover:text-zinc-300">Wine & Bar</Link></li>
             </ul>
@@ -85,7 +85,7 @@ const Navbar = () => {
             <h3 className="font-semibold text-[#FFE100] mb-2">Experience</h3>
             <ul className="space-y-1 text-sm">
               <li><Link href="/spa" className="hover:text-zinc-300">Spa & Wellness</Link></li>
-              <li><Link href="/events" className="hover:text-zinc-300">Events</Link></li>
+              <li><Link href="/eventss" className="hover:text-zinc-300">Events</Link></li>
               <li><Link href="/adventures" className="hover:text-zinc-300">Local Adventures</Link></li>
             </ul>
           </div>

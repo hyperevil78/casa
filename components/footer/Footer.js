@@ -36,7 +36,7 @@ export default function App() {
       { name: 'About Us', href: '/aboutus' },
       { name: 'Contact', href: '/contact' },
       { name: 'FAQ', href: '/faq' },
-      { name: 'Events', href: '/events' },
+      { name: 'Events', href: '/eventss' },
     ],
   };
 

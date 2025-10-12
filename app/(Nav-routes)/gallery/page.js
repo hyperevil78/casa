@@ -1,16 +1,17 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 // --- GALLERY IMAGES DATA ---
 // Adjusted spans for a more asymmetrical and dynamic layout.
 const galleryImages = [
-  { id: 1, src: 'images/lobby.webp', alt: 'Hotel Lobby', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-2' },
-  { id: 2, src: 'images/stay.webp', alt: 'Luxury Room View', colSpan: 'md:col-span-2', rowSpan: 'md:row-span-2' },
-  { id: 3, src: 'images/dining2.webp', alt: 'Fine Dining Restaurant', colSpan: 'md:col-span-3' },
-  { id: 4, src: 'images/main.webp', alt: 'Swimming Pool Area', colSpan: 'md:col-span-3' },
-  { id: 5, src: 'images/spa.webp', alt: 'Hotel Spa & Wellness', colSpan: 'md:col-span-2', rowSpan: 'md:row-span-2' },
-  { id: 6, src: 'images/inlouge.webp', alt: 'Lounge Bar Interior', colSpan: 'md:col-span-2' },
+  { id: 1, src: '/images/lobby.webp', alt: 'Hotel Lobby', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-2' },
+  { id: 2, src: '/images/stay.webp', alt: 'Luxury Room View', colSpan: 'md:col-span-2', rowSpan: 'md:row-span-2' },
+  { id: 3, src: '/images/dining2.webp', alt: 'Fine Dining Restaurant', colSpan: 'md:col-span-3' },
+  { id: 4, src: '/images/main.webp', alt: 'Swimming Pool Area', colSpan: 'md:col-span-3' },
+  { id: 5, src: '/images/spa.webp', alt: 'Hotel Spa & Wellness', colSpan: 'md:col-span-2', rowSpan: 'md:row-span-2' },
+  { id: 6, src: '/images/inlouge.webp', alt: 'Lounge Bar Interior', colSpan: 'md:col-span-2' },
   { id: 7, src: '/images/city.webp', alt: 'View of Liverpool City', colSpan: 'md:col-span-6' },
 ];
 
@@ -39,7 +40,7 @@ const Gallery = () => {
                           ${image.rowSpan || ''}
                           ${!image.rowSpan ? 'h-80' : ''}`} /* Conditionally apply height only to standard items */
             >
-              <img
+              <Image width={1200} height={800}
                 src={image.src}
                 alt={image.alt}
                 className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"

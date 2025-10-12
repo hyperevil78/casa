@@ -39,7 +39,7 @@ const about = () => {
     <div className="bg-white dark:bg-[#131322]">
       {/* --- HERO SECTION --- */}
       <div className="relative h-96">
-        <img 
+        <img
             src="https://placehold.co/1920x800/a1887f/333333?text=Welcome+to+Casa+Lumière" 
             alt="Panoramic view of Casa Lumière" 
             className="w-full h-full object-cover"
