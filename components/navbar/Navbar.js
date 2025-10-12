@@ -3,12 +3,20 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 
 const Navbar = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  
+
 
   return (
     <nav
@@ -27,11 +35,24 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex gap-10 ">
-          <li><Link className="hover:text-zinc-300 transition-colors" href="/">Login</Link></li>
-          <li><Link className="hover:text-zinc-300 transition-colors" href="/rooms">Stay</Link></li>
-          <li><Link className="hover:text-zinc-300 transition-colors" href="/gallery">Gallery</Link></li>
-          <li><Link className="hover:text-zinc-300 transition-colors" href="/contact">Contact</Link></li>
-          <li><Link className="hover:text-zinc-300 transition-colors" href="/aboutus">About Us</Link></li>
+          <li>
+            <SignedOut>
+              <SignInButton>
+                <button className="hover:text-zinc-300 transition-colors hover:cursor-pointer xl:text-xl">
+                  Login
+                </button>
+              </SignInButton>
+            </SignedOut>
+          </li>
+          <li><Link className="hover:text-zinc-300 transition-colors xl:text-xl" href="/rooms">Stay</Link></li>
+          <li><Link className="hover:text-zinc-300 transition-colors xl:text-xl" href="/gallery">Gallery</Link></li>
+          <li><Link className="hover:text-zinc-300 transition-colors xl:text-xl" href="/contact">Contact</Link></li>
+          <li><Link className="hover:text-zinc-300 transition-colors xl:text-xl" href="/aboutus">About Us</Link></li>
+          <li>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </li>
         </ul>
 
         {/* Hamburger */}
@@ -45,12 +66,20 @@ const Navbar = () => {
 
       {/* Mobile Dropdown Menu */}
       <div
-        className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${
-          isMobileMenuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
-        }`}
-      >
+        className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${isMobileMenuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
+          }`}>
         <ul className="flex flex-col gap-4 bg-[#000000]/95 backdrop-blur-sm p-5 rounded-lg border-t border-zinc-700">
-          <li><Link className="hover:text-zinc-300 transition-colors" href="/">Login</Link></li>
+          <li> <SignedOut>
+              <SignInButton>
+                <button className="hover:text-zinc-300 transition-colors hover:cursor-pointer xl:text-xl">
+                  Login
+                </button>
+              </SignInButton>
+            </SignedOut> 
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </li>
           <li><Link className="hover:text-zinc-300 transition-colors" href="/rooms">Stay</Link></li>
           <li><Link className="hover:text-zinc-300 transition-colors" href="/gallery">Gallery</Link></li>
           <li><Link className="hover:text-zinc-300 transition-colors" href="/contact">Contact</Link></li>
@@ -60,9 +89,8 @@ const Navbar = () => {
 
       {/* Desktop Dropdown */}
       <div
-        className={`hidden md:block absolute left-0 top-full w-full bg-[#121212]/95 backdrop-blur-sm border-t border-zinc-700 transition-all duration-700 ease-in-out overflow-hidden ${
-          isHovered ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`hidden md:block absolute left-0 top-full w-full bg-[#121212]/95 backdrop-blur-sm border-t border-zinc-700 transition-all duration-700 ease-in-out overflow-hidden ${isHovered ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="grid grid-cols-4 gap-8 px-10 py-6">
           <div>
