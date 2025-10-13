@@ -16,7 +16,7 @@ export default function SignInPage() {
     <div className="flex justify-center bg-[#131322]">
       <div className="my-15">
         <SignIn/>
-
+        
       </div>
 
     </div>
