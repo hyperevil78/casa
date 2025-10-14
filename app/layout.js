@@ -29,11 +29,11 @@ export default function RootLayout({ children }) {
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
 
-          <SmoothScrollProvider>
+          {/* <SmoothScrollProvider> */}
             <Navbar />
             {children}
             <Footer />
-          </SmoothScrollProvider>
+          {/* </SmoothScrollProvider> */}
         </body>
       </html>
     </ClerkProvider>

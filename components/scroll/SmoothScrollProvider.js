@@ -9,7 +9,7 @@ export default function SmoothScrollProvider({ children }) {
       duration: 1.2, // controls smoothness speed
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easing curve
       smoothWheel: true,
-      smoothTouch: true, // optional — disable smooth scroll on touch devices
+      smoothTouch: false, // optional — disable smooth scroll on touch devices
     });
 
     function raf(time) {

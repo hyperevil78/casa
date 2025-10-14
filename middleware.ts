@@ -1,10 +1,31 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
-const isProtectedRoute = createRouteMatcher(['/book(.*)'])
+// Define which routes should NOT be protected.
+// Add all your public-facing pages here.
+const isPublicRoute = createRouteMatcher([
+  '/', // Home page
+  '/contact',
+  '/about',
+  '/gallery',
+  '/events',
+  '/dining',
+  '/rooms', // The main rooms page
+  '/sign-in(.*)', // Clerk's sign-in pages
+  '/sign-up(.*)', // Clerk's sign-up pages
+]);
 
 export default clerkMiddleware(async (auth, req) => {
-  if (isProtectedRoute(req)) await auth.protect()
-})
+  // If the requested route is NOT in the public list, then protect it.
+  // This will secure your API routes (`/api/my-booking`) and any future
+  // protected pages automatically.
+  if (!isPublicRoute(req)) {
+    const sessionAuth = await auth();
+    if (!sessionAuth.isAuthenticated) {
+      // Redirect to sign-in page if not authenticated
+      return Response.redirect('/sign-in');
+    }
+  }
+});
 
 export const config = {
   matcher: [
@@ -13,4 +34,5 @@ export const config = {
     // Always run for API routes
     '/(api|trpc)(.*)',
   ],
-}
+};
+

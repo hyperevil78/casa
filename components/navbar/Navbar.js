@@ -3,6 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { useUser } from '@clerk/nextjs';
+
+
+
 import {
   ClerkProvider,
   SignInButton,
@@ -15,7 +19,7 @@ import {
 const Navbar = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const { isLoaded, isSignedIn, user } = useUser();
 
 
   return (
@@ -35,6 +39,8 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex gap-10 ">
+
+          
           <li>
             <SignedOut>
               <SignInButton>
@@ -44,6 +50,20 @@ const Navbar = () => {
               </SignInButton>
             </SignedOut>
           </li>
+
+
+
+          
+           {(isLoaded && isSignedIn)?  <Link href="/reservation" className=" hover:text-zinc-300 transition-colors xl:text-xl">
+              My Bookings
+            </Link> : null}
+           
+       
+
+
+
+
+          
           <li><Link className="hover:text-zinc-300 transition-colors xl:text-xl" href="/rooms">Stay</Link></li>
           <li><Link className="hover:text-zinc-300 transition-colors xl:text-xl" href="/gallery">Gallery</Link></li>
           <li><Link className="hover:text-zinc-300 transition-colors xl:text-xl" href="/contact">Contact</Link></li>
@@ -70,12 +90,12 @@ const Navbar = () => {
           }`}>
         <ul className="flex flex-col gap-4 bg-[#000000]/95 backdrop-blur-sm p-5 rounded-lg border-t border-zinc-700">
           <li> <SignedOut>
-              <SignInButton>
-                <button className="hover:text-zinc-300 transition-colors hover:cursor-pointer xl:text-xl">
-                  Login
-                </button>
-              </SignInButton>
-            </SignedOut> 
+            <SignInButton>
+              <button className="hover:text-zinc-300 transition-colors hover:cursor-pointer xl:text-xl">
+                Login
+              </button>
+            </SignInButton>
+          </SignedOut>
             <SignedIn>
               <UserButton />
             </SignedIn>
