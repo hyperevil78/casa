@@ -26,7 +26,7 @@ const roomData = [
   {
     id: 'deluxe',
     name: 'Deluxe Suite',
-    price: '€250',
+    price: '₹25000',
     description: 'Experience unparalleled comfort in our Deluxe Suite. Featuring a plush king-sized bed, a modern workspace, and a spacious marble bathroom, this suite is designed for both relaxation and productivity. Enjoy serene views of the city skyline from your private balcony.',
     imageSrc: '/images/deluxe_suite.webp',
     includedAmenities: ['wifi', 'tv', 'shower', 'minibar', 'roomService', 'balcony', 'poolAccess', 'safe', 'breakfast'],
@@ -34,7 +34,7 @@ const roomData = [
   {
     id: 'presidential',
     name: 'Presidential Suite',
-    price: '€750',
+    price: '₹50000',
     description: 'The pinnacle of luxury at Casa Lumière. Our Presidential Suite offers a separate living area, a formal dining space for six, a master bedroom with a walk-in closet, and a lavish bathroom with a jacuzzi tub. This suite is the epitome of opulence and exclusivity.',
     imageSrc: '/images/presidential.webp',
     includedAmenities: ['wifi', 'tv', 'shower', 'minibar', 'roomService', 'balcony', 'poolAccess', 'loungeAccess', 'airportTransfer', 'butler', 'jacuzzi', 'safe', 'breakfast'],
@@ -42,7 +42,7 @@ const roomData = [
   {
     id: 'ocean',
     name: 'Ocean View Room',
-    price: '€350',
+    price: '₹35000',
     description: 'Wake up to the breathtaking sight and sound of the ocean waves. Our Ocean View rooms offer floor-to-ceiling windows, a private terrace, and a tranquil atmosphere. The coastal-inspired decor and premium comforts make it a perfect seaside escape.',
     imageSrc: '/images/Ocean_view.webp',
     includedAmenities: ['wifi', 'tv', 'shower', 'minibar', 'roomService', 'balcony', 'poolAccess', 'safe', 'breakfast'],
@@ -110,7 +110,7 @@ const Room = () => {
             </p>
 
             <div className="mt-auto pt-8">
-              <Link href={'/book/{roomID}'} className="w-full sm:w-auto inline-block bg-amber-600 text-white font-bold text-lg py-3 px-8 rounded-lg shadow-lg hover:bg-amber-700 transition-all duration-300 transform hover:cursor-pointer hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 lg:mb-50 text-center">
+              <Link href={`/book/${selectedRoom.id}`} className="w-full sm:w-auto inline-block bg-amber-600 text-white font-bold text-lg py-3 px-8 rounded-lg shadow-lg hover:bg-amber-700 transition-all duration-300 transform hover:cursor-pointer hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 lg:mb-50 text-center">
                 Book Now
               </Link>
             </div>

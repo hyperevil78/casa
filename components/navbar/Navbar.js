@@ -60,9 +60,6 @@ const Navbar = () => {
            
        
 
-
-
-
           
           <li><Link className="hover:text-zinc-300 transition-colors xl:text-xl" href="/rooms">Stay</Link></li>
           <li><Link className="hover:text-zinc-300 transition-colors xl:text-xl" href="/gallery">Gallery</Link></li>
@@ -89,6 +86,7 @@ const Navbar = () => {
         className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${isMobileMenuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
           }`}>
         <ul className="flex flex-col gap-4 bg-[#000000]/95 backdrop-blur-sm p-5 rounded-lg border-t border-zinc-700">
+
           <li> <SignedOut>
             <SignInButton>
               <button className="hover:text-zinc-300 transition-colors hover:cursor-pointer xl:text-xl">
@@ -100,6 +98,11 @@ const Navbar = () => {
               <UserButton />
             </SignedIn>
           </li>
+
+             {(isLoaded && isSignedIn)?  <Link href="/reservation" className=" hover:text-zinc-300 transition-colors xl:text-xl">
+              My Bookings
+            </Link> : null}
+
           <li><Link className="hover:text-zinc-300 transition-colors" href="/rooms">Stay</Link></li>
           <li><Link className="hover:text-zinc-300 transition-colors" href="/gallery">Gallery</Link></li>
           <li><Link className="hover:text-zinc-300 transition-colors" href="/contact">Contact</Link></li>

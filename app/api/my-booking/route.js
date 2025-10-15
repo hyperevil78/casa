@@ -6,6 +6,9 @@ import Booking from '@/models/Booking';
 export async function GET(request) { // The 'request' object is crucial now
   // 1. Check if the user is authenticated using getAuth
   const { userId } = getAuth(request); // CORRECTED: Pass the request object to getAuth
+  
+  //console.log("the user id is api is fetching is:", userId);
+  
 
   if (!userId) {
     // If no user is logged in, return an unauthorized error
