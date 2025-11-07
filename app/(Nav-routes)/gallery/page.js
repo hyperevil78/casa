@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 
 // --- GALLERY IMAGES DATA ---
-// Adjusted spans for a more asymmetrical and dynamic layout.
+
 const galleryImages = [
   { id: 1, src: '/images/lobby.webp', alt: 'Hotel Lobby', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-2' },
   { id: 2, src: '/images/stay.webp', alt: 'Luxury Room View', colSpan: 'md:col-span-2', rowSpan: 'md:row-span-2' },

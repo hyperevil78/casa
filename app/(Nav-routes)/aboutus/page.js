@@ -3,8 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 
-// --- TEAM & AWARDS DATA ---
-// You can easily update the details for your team and awards here.
+
+
 const teamMembers = [
   {
     name: 'Alistair Finch',
@@ -73,7 +73,6 @@ const about = () => {
           </div>
         </section>
 
-        {/* --- MISSION & VISION SECTION --- */}
         <section className="text-center bg-gray-50 dark:bg-gray-800 py-12 px-8 rounded-lg">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>

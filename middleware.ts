@@ -1,38 +1,30 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
-// Define which routes should NOT be protected.
-// Add all your public-facing pages here.
 const isPublicRoute = createRouteMatcher([
-  '/', // Home page
+  '/',
   '/contact',
   '/about',
   '/gallery',
   '/events',
   '/dining',
-  '/rooms', // The main rooms page
-  '/sign-in(.*)', // Clerk's sign-in pages
-  '/sign-up(.*)', // Clerk's sign-up pages
+  '/rooms',
+  '/book/(.*)',
+  '/sign-in(.*)',
+  '/sign-up(.*)',
+  '/api/rooms(.*)',
 ]);
 
-export default clerkMiddleware(async (auth, req) => {
-  // If the requested route is NOT in the public list, then protect it.
-  // This will secure your API routes (`/api/my-booking`) and any future
-  // protected pages automatically.
+export default clerkMiddleware((auth, req) => {
+  // If the route is NOT public, protect it.
+  // This will protect /api/bookings/create
   if (!isPublicRoute(req)) {
-    const sessionAuth = await auth();
-    if (!sessionAuth.isAuthenticated) {
-      // Redirect to sign-in page if not authenticated
-      return Response.redirect('/sign-in');
-    }
+    auth.protect();
   }
 });
 
 export const config = {
   matcher: [
-    // Skip Next.js internals and all static files, unless found in search params
     '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
-    // Always run for API routes
     '/(api|trpc)(.*)',
   ],
 };
-

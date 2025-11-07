@@ -2,14 +2,13 @@
 
 import React from 'react';
 
-// add url of the social media link
 const socialMediaLinks = {
   facebook: '#',
   twitter: '#',
   instagram: '#',
 };
 
-// Hotel Information
+
 const hotelInfo = {
     address: 'Blundellsands Crosby,Liverpool, United Kingdom ',
     phone: '987 654 3210',

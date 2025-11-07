@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 
 // --- FAQ DATA ---
-// You can easily add, remove, or edit questions and answers here.
 const faqData = [
   {
     question: 'What are the check-in and check-out times?',

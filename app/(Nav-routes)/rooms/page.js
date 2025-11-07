@@ -21,7 +21,6 @@ const allAmenities = [
 ];
 
 // --- DATA FOR THE ROOMS ---
-// The `includedAmenities` array now uses the 'id' from the master list above.
 const roomData = [
   {
     id: 'deluxe',
@@ -53,7 +52,7 @@ const roomData = [
 const Room = () => {
   const [selectedRoom, setSelectedRoom] = useState(roomData[0]);
 
-  // Dynamically find which amenities are included and which are not for the selected room
+
   const includedAmenitiesDetails = allAmenities.filter(amenity =>
     selectedRoom.includedAmenities.includes(amenity.id)
   );

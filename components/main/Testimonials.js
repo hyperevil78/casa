@@ -1,7 +1,5 @@
 "use client"
 
-
-
 const StarIcon = ({ className }) => (
   <svg
     className={className}

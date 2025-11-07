@@ -1,6 +1,7 @@
 
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Hero = () => {
   return (
@@ -12,10 +13,14 @@ const Hero = () => {
         <h2 className="text-white text-2xl sm:text-3xl md:text-4xl xl:text-6xl font-bold ">IN EVERY STAY</h2>
         <div className='flex gap-5'>
           <button className='mt-10 text-white border border-white text-sm sm:text-xl md:text-2xl xl:text-3xl hover:underline px-6 py-2 w-fit rounded-md hover:cursor-pointer bg-transparent transition-all 700 ease-in hover:bg-white hover:text-black'>
+            <Link href={'/gallery'}>
             Explore
+            </Link>
           </button>
           <button className='mt-10 text-white border border-white text-sm sm:text-xl md:text-2xl xl:text-3xl hover:underline px-6 py-2 w-fit rounded-md hover:cursor-pointer bg-transparent transition-all 700 ease-in hover:bg-white hover:text-black'>
+            <Link href={'/rooms'}>
             Reserve
+          </Link>
           </button>
         </div>
         <div className='flex md:justify-end mt-10   '>

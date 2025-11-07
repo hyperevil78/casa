@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getAuth } from '@clerk/nextjs/server'; // CORRECTED: Switched to getAuth
+import { getAuth } from '@clerk/nextjs/server'; 
 import { connect as connectDB } from '@/lib/db';
 import Booking from '@/models/Booking'; 
 

@@ -46,7 +46,7 @@ const BookingCard = ({ booking }) => {
           </div>
           <div>
             <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Total Price</p>
-            <p className="text-lg font-semibold text-gray-800 dark:text-gray-100">€{booking.totalPrice}</p>
+            <p className="text-lg font-semibold text-gray-800 dark:text-gray-100">₹{booking.totalPrice}</p>
           </div>
         </div>
       </div>
@@ -134,7 +134,7 @@ const MyBookingsPage = () => {
 
   // --- Main Content: Display Bookings ---
   return (
-    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <div className="bg-gray-50 dark:bg-[#131322] min-h-screen">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-8">My Bookings</h1>
         

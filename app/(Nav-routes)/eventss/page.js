@@ -3,8 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 
-// --- NEARBY ATTRACTIONS DATA ---
-// Update this with Liverpool's famous spots.
+
+
 const attractionsData = [
   {
     name: 'Royal Albert Dock',
