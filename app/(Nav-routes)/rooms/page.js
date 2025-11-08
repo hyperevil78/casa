@@ -61,7 +61,7 @@ const Room = () => {
   );
 
   return (
-    <section className="bg-gray-50 dark:bg-[#131322] py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#131322] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Top Center Navigation Buttons */}

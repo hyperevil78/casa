@@ -17,7 +17,7 @@ const hotelInfo = {
 
 const Contact = () => {
   return (
-    <section className="bg-white dark:bg-[#131322] py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#131322] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         
         {/* Page Header */}
@@ -34,7 +34,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
           {/* Column 1: Contact Form */}
-          <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+          <div className="bg-[#131322] p-8 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send us a Message</h2>
             <form action="#" method="POST" className="space-y-6">
               <div>
@@ -89,7 +89,7 @@ const Contact = () => {
           {/* Column 2: Contact Details, Map, and Socials */}
           <div className="space-y-8">
             {/* Contact Info */}
-            <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+            <div className="bg-[#131322] p-8 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Contact Information</h3>
                 <div className="space-y-4 text-gray-600 dark:text-gray-300">
                     <p className="flex items-start">

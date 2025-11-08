@@ -45,7 +45,7 @@ const diningPhotos = [
 
 const DiningPage = () => {
   return (
-    <div className="bg-white dark:bg-[#131322] py-16">
+    <div className="bg-[#131322] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Page Header */}

@@ -72,7 +72,7 @@ const FaqPage = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-[#131322] py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#131322] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         
         {/* Page Title */}

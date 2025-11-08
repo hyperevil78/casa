@@ -225,7 +225,7 @@ const BookingPage = () => {
         }
       `}</style>
 
-      <div className="bg-gray-50 dark:bg-[#131322] min-h-screen py-16 px-4">
+      <div className="bg-[#131322] min-h-screen py-16 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Left Column */}
           <div className="lg:col-span-2 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">

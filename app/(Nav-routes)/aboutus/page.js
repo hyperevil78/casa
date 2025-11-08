@@ -115,7 +115,7 @@ const about = () => {
         </section>
 
         {/* --- AWARDS & RECOGNITION SECTION --- */}
-        <section className="bg-gray-50 dark:bg-gray-800 py-12 px-8 rounded-lg">
+        <section className="bg-gray-800 py-12 px-8 rounded-lg">
             <div className="text-center">
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">Awards & Recognition</h2>
                 <p className="mt-2 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">

@@ -15,7 +15,7 @@ const BookingCard = ({ booking }) => {
   });
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+    <div className=" bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
       <div className="p-6">
         <div className="flex justify-between items-start">
             <div>
@@ -137,7 +137,7 @@ const MyBookingsPage = () => {
 
   // --- Main Content: Display Bookings ---
   return (
-    <div className="bg-gray-50 dark:bg-[#131322] min-h-screen">
+    <div className=" bg-[#131322] min-h-screen">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-8">My Bookings</h1>
         
