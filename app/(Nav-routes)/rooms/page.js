@@ -27,7 +27,7 @@ const roomData = [
     name: 'Deluxe Suite',
     price: '₹25000',
     description: 'Experience unparalleled comfort in our Deluxe Suite. Featuring a plush king-sized bed, a modern workspace, and a spacious marble bathroom, this suite is designed for both relaxation and productivity. Enjoy serene views of the city skyline from your private balcony.',
-    imageSrc: '/images/deluxe_suite.webp',
+    imageSrc: '/images/Deluxe_suite.webp',
     includedAmenities: ['wifi', 'tv', 'shower', 'minibar', 'roomService', 'balcony', 'poolAccess', 'safe', 'breakfast'],
   },
   {
