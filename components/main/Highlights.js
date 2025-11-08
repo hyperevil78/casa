@@ -1,9 +1,15 @@
 import React from 'react'
 
+
+
 const Highlights = () => {
     return (
         <section className='w-full h-auto min-h-[70vh] bg-[#121212] py-16'>
-            <h2 className="text-center text-3xl md:text-6xl font-bold mb-10 bg-gradient-to-r from-[#ffe100] via-[#e9c960] to-[#f2ebcd] bg-clip-text text-transparent">SIX REASONS TO STAY</h2>
+            <h2 className="text-center text-3xl md:text-6xl font-bold mb-10 bg-gradient-to-r from-[#ffe100] via-[#e9c960] to-[#f2ebcd] bg-clip-text text-transparent">
+
+                SIX REASONS TO STAY
+
+            </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-6 text-md">
                 <div className="p-6 rounded-2xl  ">
@@ -40,7 +46,7 @@ const Highlights = () => {
         </section>
 
 
-        
+
 
 
     )

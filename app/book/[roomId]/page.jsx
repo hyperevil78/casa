@@ -6,6 +6,7 @@ import 'react-day-picker/dist/style.css';
 import { format, differenceInCalendarDays } from 'date-fns';
 import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
+import { Loader } from '@/components/loader/Loader';
 
 
 const useRoomId = () => {
@@ -124,7 +125,13 @@ const BookingPage = () => {
       setIsBooking(false); // Allow user to try again
     }
   };
-  if (isLoading || !isLoaded) return <div className="text-center py-20">Loading Room Details...</div>;
+
+  if (isLoading || !isLoaded)  return <Loader/>
+  //<div className="text-center py-20">Loading Room Details...</div>;
+
+  
+  
+  
   if (error) return <div className="text-center py-20 text-red-500 font-semibold">{error}</div>;
   if (!room) return <div className="text-center py-20">Could not find room details. Please try again.</div>;
 

@@ -3,6 +3,7 @@
 import {useState, useEffect } from 'react';
 import { useUser } from '@clerk/nextjs'; 
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import { Loader } from '@/components/loader/Loader';
 
 // --- Helper Component for a Single Booking Card ---
 const BookingCard = ({ booking }) => {
@@ -111,9 +112,11 @@ const MyBookingsPage = () => {
   // Show a loading spinner while clerk is checking auth or we are fetching data
   if (!isLoaded || (isSignedIn && isLoading)) {
     return (
-        <div className="flex justify-center items-center min-h-screen">
-            <p className="text-lg">Loading your bookings...</p>
-        </div>
+        // <div className="flex justify-center items-center min-h-screen">
+        //     <p className="text-lg">Loading your bookings...</p>
+        // </div>
+
+        <Loader/>
     );
   }
   

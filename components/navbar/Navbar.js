@@ -7,6 +7,7 @@ import { useUser } from '@clerk/nextjs';
 
 
 
+
 import {
   ClerkProvider,
   SignInButton,
@@ -40,7 +41,7 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <ul className="hidden md:flex gap-10 ">
 
-          
+
           <li>
             <SignedOut>
               <SignInButton>
@@ -53,15 +54,20 @@ const Navbar = () => {
 
 
 
-          
-           {(isLoaded && isSignedIn)?  <Link href="/reservation" className=" hover:text-zinc-300 transition-colors xl:text-xl">
-              My Bookings
-            </Link> : null}
-           
-       
 
-          
-          <li><Link className="hover:text-zinc-300 transition-colors xl:text-xl" href="/rooms">Stay</Link></li>
+          {(isLoaded && isSignedIn) ? <Link href="/reservation" className=" hover:text-zinc-300 transition-colors xl:text-xl">
+            My Bookings
+          </Link> : null}
+
+
+
+
+          <li><Link className="hover:text-zinc-300 transition-colors xl:text-xl" href="/rooms">
+           Stays
+          </Link>
+          </li>
+
+
           <li><Link className="hover:text-zinc-300 transition-colors xl:text-xl" href="/gallery">Gallery</Link></li>
           <li><Link className="hover:text-zinc-300 transition-colors xl:text-xl" href="/contact">Contact</Link></li>
           <li><Link className="hover:text-zinc-300 transition-colors xl:text-xl" href="/aboutus">About Us</Link></li>
@@ -99,9 +105,9 @@ const Navbar = () => {
             </SignedIn>
           </li>
 
-             {(isLoaded && isSignedIn)?  <Link href="/reservation" className=" hover:text-zinc-300 transition-colors xl:text-xl">
-              My Bookings
-            </Link> : null}
+          {(isLoaded && isSignedIn) ? <Link href="/reservation" className=" hover:text-zinc-300 transition-colors xl:text-xl">
+            My Bookings
+          </Link> : null}
 
           <li><Link className="hover:text-zinc-300 transition-colors" href="/rooms">Stay</Link></li>
           <li><Link className="hover:text-zinc-300 transition-colors" href="/gallery">Gallery</Link></li>
