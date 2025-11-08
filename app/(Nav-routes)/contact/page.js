@@ -22,10 +22,10 @@ const Contact = () => {
         
         {/* Page Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
             Get In Touch
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
             We'd love to hear from you. Whether you have a question about our rooms, amenities, or would like to book your stay, our team is ready to answer all your questions.
           </p>
         </div>
@@ -35,10 +35,10 @@ const Contact = () => {
           
           {/* Column 1: Contact Form */}
           <div className="bg-[#131322] p-8 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send us a Message</h2>
+            <h2 className="text-2xl font-bold text-white mb-6">Send us a Message</h2>
             <form action="#" method="POST" className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Full Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300">Full Name</label>
                 <div className="mt-1">
                   <input
                     type="text"
@@ -51,7 +51,7 @@ const Contact = () => {
                 </div>
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300">Email</label>
                 <div className="mt-1">
                   <input
                     id="email"
@@ -64,7 +64,7 @@ const Contact = () => {
                 </div>
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300">Message</label>
                 <div className="mt-1">
                   <textarea
                     id="message"
@@ -90,8 +90,8 @@ const Contact = () => {
           <div className="space-y-8">
             {/* Contact Info */}
             <div className="bg-[#131322] p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Contact Information</h3>
-                <div className="space-y-4 text-gray-600 dark:text-gray-300">
+                <h3 className="text-2xl font-bold text-white mb-4">Contact Information</h3>
+                <div className="space-y-4 text-gray-300">
                     <p className="flex items-start">
                         <svg className="flex-shrink-0 h-6 w-6 text-amber-500 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                         <span>{hotelInfo.address}</span>
@@ -123,7 +123,7 @@ const Contact = () => {
 
             {/* Social Media Links */}
             <div className="text-center">
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Follow Us</h3>
+                <h3 className="text-xl font-semibold text-gray-100 mb-4">Follow Us</h3>
                 <div className="flex justify-center space-x-6">
                     <a href={socialMediaLinks.facebook} className="text-gray-400 hover:text-amber-500 transition-colors duration-300">
                         <span className="sr-only">Facebook</span>

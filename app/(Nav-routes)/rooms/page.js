@@ -98,13 +98,13 @@ const Room = () => {
 
           {/* Right Side: Details */}
           <div className="flex flex-col h-full">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
               {selectedRoom.name}
             </h2>
-            <p className="mt-2 text-2xl font-semibold text-amber-600 dark:text-amber-500">
+            <p className=" mt-2 text-2xl font-semibold text-amber-600 dark:text-amber-500">
               {selectedRoom.price} / Night
             </p>
-            <p className="mt-4 text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="mt-4 text-base text-gray-300 leading-relaxed">
               {selectedRoom.description}
             </p>
 
@@ -122,12 +122,12 @@ const Room = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto">
             {/* Column 1: Included Amenities */}
             <div>
-              <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Included in Your Stay</h4>
+              <h4 className="text-xl font-semibold text-gray-100 mb-4">Included in Your Stay</h4>
               <ul className="space-y-3">
                 {includedAmenitiesDetails.map(amenity => (
                   <li key={amenity.id} className="flex items-center">
                     <svg className="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span className="text-gray-700 dark:text-gray-200">{amenity.name}</span>
+                    <span className="text-gray-100">{amenity.name}</span>
                   </li>
                 ))}
               </ul>
@@ -135,13 +135,13 @@ const Room = () => {
 
 
             <div>
-              <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Available in Other Suites</h4>
+              <h4 className="text-xl font-semibold text-gray-100 mb-4">Available in Other Suites</h4>
               <ul className="space-y-3">
                 {notIncludedAmenitiesDetails.length > 0 ? (
                   notIncludedAmenitiesDetails.map(amenity => (
                     <li key={amenity.id} className="flex items-center">
                       <svg className="w-6 h-6 text-red-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                      <span className="text-gray-500 dark:text-gray-400 line-through">{amenity.name}</span>
+                      <span className="text-gray-200 line-through">{amenity.name}</span>
                     </li>
                   ))
                 ) : (

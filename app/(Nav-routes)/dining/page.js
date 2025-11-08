@@ -50,10 +50,10 @@ const DiningPage = () => {
         
         {/* Page Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
             The Lumière Restaurant
           </h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-200">
             Experience culinary excellence with locally sourced ingredients, crafted into unforgettable dishes by our award-winning chefs.
           </p>
         </div>
@@ -92,8 +92,8 @@ const DiningPage = () => {
         {/* --- Menu Section --- */}
         <section>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Our Menu</h2>
-            <p className="mt-2 text-md text-gray-500 dark:text-gray-400">A taste of modern British cuisine.</p>
+            <h2 className="text-3xl font-bold text-white">Our Menu</h2>
+            <p className="mt-2 text-md text-gray-200">A taste of modern British cuisine.</p>
           </div>
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Starters */}
@@ -102,8 +102,8 @@ const DiningPage = () => {
               <div className="space-y-4">
                 {menu.starters.map((item) => (
                   <div key={item.name}>
-                    <h4 className="font-bold text-gray-800 dark:text-gray-100">{item.name}</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">{item.description}</p>
+                    <h4 className="font-bold text-gray-100">{item.name}</h4>
+                    <p className="text-sm text-gray-300">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -114,8 +114,8 @@ const DiningPage = () => {
               <div className="space-y-4">
                 {menu.mains.map((item) => (
                   <div key={item.name}>
-                    <h4 className="font-bold text-gray-800 dark:text-gray-100">{item.name}</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">{item.description}</p>
+                    <h4 className="font-bold text-gray-100">{item.name}</h4>
+                    <p className="text-sm text-gray-300">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -126,8 +126,8 @@ const DiningPage = () => {
               <div className="space-y-4">
                 {menu.desserts.map((item) => (
                   <div key={item.name}>
-                    <h4 className="font-bold text-gray-800 dark:text-gray-100">{item.name}</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">{item.description}</p>
+                    <h4 className="font-bold text-gray-100">{item.name}</h4>
+                    <p className="text-sm text-gray-300">{item.description}</p>
                   </div>
                 ))}
               </div>

@@ -36,7 +36,7 @@ const awards = [
 
 const about = () => {
   return (
-    <div className="bg-white dark:bg-[#131322]">
+    <div className="bg-[#131322]">
       {/* --- HERO SECTION --- */}
       <div className="relative h-96">
         <img
@@ -57,10 +57,10 @@ const about = () => {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
             <h2 className="text-3xl font-bold text-amber-600 dark:text-amber-500 tracking-tight">Our Story</h2>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+            <p className="mt-4 text-lg text-gray-300">
               Founded in 2018, Casa Lumière was born from a vision to create an oasis of bespoke luxury amidst the vibrant, beating heart of Liverpool. Our founders, captivated by the city's rich maritime history and its dynamic cultural renaissance, sought to establish a landmark that mirrored Liverpool's own journey—honouring its grand past while embracing a sophisticated future.
             </p>
-            <p className="mt-4 text-gray-600 dark:text-gray-300">
+            <p className="mt-4 text-gray-300">
               Nestled within a meticulously restored Edwardian building near the iconic Royal Albert Dock, our hotel is a testament to timeless elegance. Every detail was crafted to offer a sanctuary of comfort and style, blending classic architecture with contemporary design. From our initial opening, we have strived to be more than just a place to stay; we aim to be a cornerstone of the city's luxury landscape, offering a uniquely Liverpudlian welcome to guests from across the globe.
             </p>
           </div>
@@ -94,7 +94,7 @@ const about = () => {
         <section>
             <div className="text-center">
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">Meet Our Leadership</h2>
-                <p className="mt-2 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+                <p className="mt-2 max-w-2xl mx-auto text-lg text-gray-100">
                     The driving force behind our commitment to excellence.
                 </p>
             </div>
@@ -108,7 +108,7 @@ const about = () => {
                         />
                         <h3 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">{member.name}</h3>
                         <p className="text-amber-600 dark:text-amber-500">{member.role}</p>
-                        <p className="mt-2 text-gray-600 dark:text-gray-300">{member.bio}</p>
+                        <p className="mt-2 text-gray-300">{member.bio}</p>
                     </div>
                 ))}
             </div>
@@ -117,8 +117,8 @@ const about = () => {
         {/* --- AWARDS & RECOGNITION SECTION --- */}
         <section className="bg-gray-800 py-12 px-8 rounded-lg">
             <div className="text-center">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">Awards & Recognition</h2>
-                <p className="mt-2 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+                <h2 className="text-3xl font-bold text-white tracking-tight">Awards & Recognition</h2>
+                <p className="mt-2 max-w-2xl mx-auto text-lg text-gray-100">
                     We are honored to be recognized for our dedication to excellence in hospitality.
                 </p>
             </div>

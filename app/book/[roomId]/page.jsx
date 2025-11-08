@@ -228,12 +228,12 @@ const BookingPage = () => {
       <div className="bg-[#131322] min-h-screen py-16 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Left Column */}
-          <div className="lg:col-span-2 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
-            <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">Book Your Stay</h1>
+          <div className="lg:col-span-2 bg-[#131322] p-8 rounded-lg shadow-lg">
+            <h1 className="text-4xl font-extrabold text-white">Book Your Stay</h1>
             <h2 className="mt-2 text-2xl font-bold text-amber-600">{room.name}</h2>
 
             <div className="mt-8 border-t dark:border-gray-700 pt-6">
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Select Your Dates</h3>
+              <h3 className="text-xl font-semibold text-gray-100 mb-4">Select Your Dates</h3>
 
               <div className="w-full flex justify-center">
                 <div className="w-full max-w-4xl">
@@ -243,7 +243,7 @@ const BookingPage = () => {
                     onSelect={setDateRange}
                     numberOfMonths={1}
                     disabled={{ before: new Date() }}
-                    className="rdp text-gray-900 dark:text-white"
+                    className="rdp text-white"
                     classNames={{
                       months: 'grid grid-cols-1 lg:grid-cols-2 gap-8',
                       month: 'bg-gray-800 rounded-lg p-6 shadow-md w-full',
@@ -268,17 +268,17 @@ const BookingPage = () => {
             </div>
 
             <div className="mt-8 border-t dark:border-gray-700 pt-6">
-              <label htmlFor="guests" className="block text-xl font-semibold text-gray-800 dark:text-gray-100">
+              <label htmlFor="guests" className="block text-xl font-semibold text-gray-100">
                 Number of Guests
               </label>
               <select
                 id="guests"
                 value={numberOfGuests}
                 onChange={(e) => setNumberOfGuests(parseInt(e.target.value))}
-                className="mt-2 w-full max-w-xs p-3 border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:ring-amber-500 focus:border-amber-500"
+                className="mt-2 w-full max-w-xs p-3 border rounded-md dark:bg-gray-700 dark:border-gray-600 text-white focus:ring-amber-500 focus:border-amber-500 hover:cursor-pointer"
               >
                 {Array.from({ length: room.maxGuests }, (_, i) => i + 1).map(num => (
-                  <option key={num} value={num}>{num} Guest{num > 1 ? 's' : ''}</option>
+                  <option className='bg-[#131322] hover:cursor-pointer' key={num} value={num}>{num} Guest{num > 1 ? 's' : ''}</option>
                 ))}
               </select>
             </div>
@@ -286,27 +286,27 @@ const BookingPage = () => {
 
           {/* Right Column */}
           <div className="lg:col-span-1">
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg sticky top-28">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white border-b dark:border-gray-700 pb-4">Booking Summary</h3>
+            <div className="bg-gray-800 p-8 rounded-lg shadow-lg sticky top-28">
+              <h3 className="text-2xl font-bold text-white border-b dark:border-gray-700 pb-4">Booking Summary</h3>
               <div className="space-y-4 mt-4">
                 <div className="flex justify-between">
-                  <p className="text-gray-600 dark:text-gray-300">Check-in:</p>
-                  <p className="font-semibold dark:text-white">{dateRange?.from ? format(dateRange.from, 'dd MMM yyyy') : 'Select date'}</p>
+                  <p className="text-gray-300">Check-in:</p>
+                  <p className="font-semibold text-white">{dateRange?.from ? format(dateRange.from, 'dd MMM yyyy') : 'Select date'}</p>
                 </div>
                 <div className="flex justify-between">
-                  <p className="text-gray-600 dark:text-gray-300">Check-out:</p>
-                  <p className="font-semibold dark:text-white">{dateRange?.to ? format(dateRange.to, 'dd MMM yyyy') : 'Select date'}</p>
+                  <p className="text-gray-300">Check-out:</p>
+                  <p className="font-semibold text-white">{dateRange?.to ? format(dateRange.to, 'dd MMM yyyy') : 'Select date'}</p>
                 </div>
                 <div className="flex justify-between">
-                  <p className="text-gray-600 dark:text-gray-300">Guests:</p>
-                  <p className="font-semibold dark:text-white">{numberOfGuests}</p>
+                  <p className="text-gray-300">Guests:</p>
+                  <p className="font-semibold text-white">{numberOfGuests}</p>
                 </div>
                 <div className="border-t dark:border-gray-700 pt-4 mt-4">
                   <div className="flex justify-between">
-                    <p className="text-gray-600 dark:text-gray-300">{room.pricePerNight} ₹ x {numberOfNights} nights</p>
-                    <p className="font-semibold dark:text-white">₹{totalPrice}</p>
+                    <p className=" text-gray-300">{room.pricePerNight} ₹ x {numberOfNights} nights</p>
+                    <p className="font-semibold text-white">₹{totalPrice}</p>
                   </div>
-                  <div className="flex justify-between mt-2 text-xl font-bold dark:text-white">
+                  <div className="flex justify-between mt-2 text-xl font-bold text-white">
                     <p>Total Price:</p>
                     <p>₹{totalPrice}</p>
                   </div>

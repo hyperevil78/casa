@@ -19,11 +19,11 @@ const BookingCard = ({ booking }) => {
       <div className="p-6">
         <div className="flex justify-between items-start">
             <div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white capitalize">
+                <h3 className="text-2xl font-bold text-white capitalize">
                 {/* Simple logic to display room name from roomId */}
                 {booking.roomId.replace('_', ' ')} 
                 </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">Booking ID: {booking._id}</p>
+                <p className="text-sm text-gray-300">Booking ID: {booking._id}</p>
             </div>
             <span className={`px-3 py-1 text-sm font-semibold rounded-full ${
                 booking.bookingStatus === 'Confirmed' ? 'bg-green-100 text-green-800' : 'bg-gray-200 text-gray-700'
@@ -34,20 +34,20 @@ const BookingCard = ({ booking }) => {
         
         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-gray-200 dark:border-gray-700 pt-4">
           <div>
-            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Check-in</p>
-            <p className="text-lg font-semibold text-gray-800 dark:text-gray-100">{checkInDate}</p>
+            <p className="text-sm font-medium text-gray-400">Check-in</p>
+            <p className="text-lg font-semibold text-gray-100">{checkInDate}</p>
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Check-out</p>
-            <p className="text-lg font-semibold text-gray-800 dark:text-gray-100">{checkOutDate}</p>
+            <p className="text-sm font-medium text-gray-400">Check-out</p>
+            <p className="text-lg font-semibold text-gray-100">{checkOutDate}</p>
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Guests</p>
-            <p className="text-lg font-semibold text-gray-800 dark:text-gray-100">{booking.numberOfGuests}</p>
+            <p className="text-sm font-medium text-gray-400">Guests</p>
+            <p className="text-lg font-semibold text-gray-100">{booking.numberOfGuests}</p>
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Total Price</p>
-            <p className="text-lg font-semibold text-gray-800 dark:text-gray-100">₹{booking.totalPrice}</p>
+            <p className="text-sm font-medium text-gray-400">Total Price</p>
+            <p className="text-lg font-semibold text-gray-100">₹{booking.totalPrice}</p>
           </div>
         </div>
       </div>
@@ -139,7 +139,7 @@ const MyBookingsPage = () => {
   return (
     <div className=" bg-[#131322] min-h-screen">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-8">My Bookings</h1>
+        <h1 className="text-4xl font-extrabold text-white mb-8">My Bookings</h1>
         
         {bookings.length > 0 ? (
           <div className="space-y-6">
@@ -148,9 +148,9 @@ const MyBookingsPage = () => {
             ))}
           </div>
         ) : (
-          <div className="text-center bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">No Bookings Found</h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-300">You haven't made any bookings yet. Why not explore our rooms?</p>
+          <div className="text-center bg-gray-800 p-8 rounded-lg shadow-md">
+            <h2 className="text-2xl font-bold text-white">No Bookings Found</h2>
+            <p className="mt-2 text-gray-300">You haven't made any bookings yet. Why not explore our rooms?</p>
           </div>
         )}
       </div>

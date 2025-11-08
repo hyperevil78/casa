@@ -36,7 +36,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
     <div className="border-b border-gray-200 dark:border-gray-700 py-6">
       <button
         onClick={onClick}
-        className="w-full flex justify-between items-center text-left text-lg font-semibold text-gray-800 dark:text-gray-100 focus:outline-none hover:cursor-pointer"
+        className="w-full flex justify-between items-center text-left text-lg font-semibold text-gray-100 focus:outline-none hover:cursor-pointer"
       >
         <span>{question}</span>
         <span className="transform transition-transform duration-300">
@@ -54,7 +54,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96 mt-4' : 'max-h-0'}`}
       >
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p className="text-gray-300 leading-relaxed">
           {answer}
         </p>
       </div>
@@ -77,10 +77,10 @@ const FaqPage = () => {
         
         {/* Page Title */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
             Frequently Asked Questions
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
             Have questions? We have answers. If you can't find what you're looking for, feel free to contact us directly.
           </p>
         </div>

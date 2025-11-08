@@ -22,10 +22,10 @@ const Gallery = () => {
         
         {/* Gallery Title */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
             Our Gallery
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
             A visual journey through the elegance and charm of Casa Lumière.
           </p>
         </div>
