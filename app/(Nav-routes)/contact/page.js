@@ -1,21 +1,72 @@
 'use client';
+// 1. IMPORT useState
+import React, { useState } from 'react';
 
-import React from 'react';
-
+// --- Your existing data ---
 const socialMediaLinks = {
   facebook: '#',
   twitter: '#',
   instagram: '#',
 };
 
-
 const hotelInfo = {
-    address: 'Blundellsands Crosby,Liverpool, United Kingdom ',
-    phone: '987 654 3210',
-    email: 'reservations@casalumiere.com',
+  address: 'Blundellsands Crosby,Liverpool, United Kingdom ',
+  phone: '987 654 3210',
+  email: 'reservations@casalumiere.com',
 };
 
 const Contact = () => {
+  // 2. ADD STATE for form data, loading, and status
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState('');
+
+  // 3. ADD HANDLER for input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // 4. ADD HANDLER for form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Stop page reload
+    setIsLoading(true);
+    setStatus('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('Message sent successfully!');
+        setTimeout(() => {
+          setStatus('')
+        }, 3000);
+        setFormData({ name: '', email: '', message: '' }); 
+      } else {
+        setStatus('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setStatus('An error occurred. Please try again.');
+    } finally {
+      setIsLoading(false); // Stop loading
+    }
+  };
+  
+  // --- Your existing JSX ---
   return (
     <section className="bg-[#131322] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -36,7 +87,9 @@ const Contact = () => {
           {/* Column 1: Contact Form */}
           <div className="bg-[#131322] p-8 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold text-white mb-6">Send us a Message</h2>
-            <form action="#" method="POST" className="space-y-6">
+            
+            {/* 5. MODIFY <form> tag */}
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300">Full Name</label>
                 <div className="mt-1">
@@ -47,6 +100,9 @@ const Contact = () => {
                     autoComplete="name"
                     className="block w-full px-4 py-3 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm focus:ring-amber-500 focus:border-amber-500"
                     placeholder="John Doe"
+                    value={formData.name}     // 6. BIND value
+                    onChange={handleChange}   // 7. ADD onChange
+                    required
                   />
                 </div>
               </div>
@@ -60,6 +116,9 @@ const Contact = () => {
                     autoComplete="email"
                     className="block w-full px-4 py-3 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm focus:ring-amber-500 focus:border-amber-500"
                     placeholder="Email"
+                    value={formData.email}    // 6. BIND value
+                    onChange={handleChange}   // 7. ADD onChange
+                    required
                   />
                 </div>
               </div>
@@ -72,21 +131,31 @@ const Contact = () => {
                     rows={4}
                     className="block w-full px-4 py-3 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm focus:ring-amber-500 focus:border-amber-500"
                     placeholder="Your message..."
+                    value={formData.message}  // 6. BIND value
+                    onChange={handleChange}   // 7. ADD onChange
+                    required
                   />
                 </div>
               </div>
               <div>
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-lg text-base font-medium text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition-all duration-300"
+                  disabled={isLoading} // 8. ADD disabled state
+                  className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-lg text-base font-medium text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition-all duration-300 disabled:opacity-50"
                 >
-                  Submit
+                  {isLoading ? 'Sending...' : 'Submit'} {/* 9. CHANGE button text */}
                 </button>
               </div>
+              
+              {/* 10. ADD status message */}
+              {status && (
+                <p className="text-center text-gray-300">{status}</p>
+              )}
+              
             </form>
           </div>
 
-          {/* Column 2: Contact Details, Map, and Socials */}
+          {/* Column 2: Contact Details, Map, and Socials (UNCHANGED) */}
           <div className="space-y-8">
             {/* Contact Info */}
             <div className="bg-[#131322] p-8 rounded-lg shadow-lg">
@@ -110,7 +179,7 @@ const Contact = () => {
             {/* Google Map */}
             <div className="rounded-lg overflow-hidden shadow-lg">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2373.397799317155!2d-3.057162923402642!3d53.497088972333415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTPCsDI5JzQ5LjUiTiAzwrAwMycxNi41Ilc!5e0!3m2!1sen!2sin!4v1760024911202!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2373.397799317155!2d-3.057162923402642!3d53.497088972333415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTPCsDI5JzQ5LjUiTiAzwrAwMycxNi41Ilc!5e0!3m2!1sen!2sin!4v1760024911202!5m2!1sen!2sin" // Note: This src URL seems incorrect, but I'm not changing it.
                     width="100%"
                     height="300"
                     style={{ border: 0 }}
@@ -135,7 +204,7 @@ const Contact = () => {
                     </a>
                     <a href={socialMediaLinks.instagram} className="text-gray-400 hover:text-amber-500 transition-colors duration-300">
                         <span className="sr-only">Instagram</span>
-                        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.406-11.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" clipRule="evenodd" /></svg>
+                        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218 1.791.465 2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.406-11.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z" clipRule="evenodd" /></svg>
                     </a>
                 </div>
             </div>
