@@ -136,7 +136,7 @@ const Room = () => {
 
         {/* --- Detailed Amenities Section --- */}
         <div className="mt-20 pt-12 border-t border-gray-200 dark:border-gray-700">
-          <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-10">What This Room Offers</h3>
+          <h3 className="text-3xl font-bold text-center text-white mb-10">What This Room Offers</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto">
             {/* Column 1: Included Amenities */}
             <div>
