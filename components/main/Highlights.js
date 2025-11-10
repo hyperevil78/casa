@@ -1,12 +1,16 @@
+"use client"
 import React from 'react'
 
 
+const handleAnimationComplete = () => {
+  console.log('Animation completed!');
+};
 
 const Highlights = () => {
     return (
         <section className='w-full h-auto min-h-[70vh] bg-[#121212] py-16'>
             <h2 className="text-center text-3xl md:text-6xl font-bold mb-10 bg-gradient-to-r from-[#ffe100] via-[#e9c960] to-[#f2ebcd] bg-clip-text text-transparent">
-
+               
                 SIX REASONS TO STAY
 
             </h2>

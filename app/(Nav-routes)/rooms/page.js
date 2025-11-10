@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useUser } from '@clerk/nextjs';
+import { useRouter } from 'next/navigation';
 
 const allAmenities = [
   { id: 'wifi', name: 'High-speed WiFi' },
@@ -60,6 +62,20 @@ const Room = () => {
     !selectedRoom.includedAmenities.includes(amenity.id)
   );
 
+
+  const { isSignedIn } = useUser();
+  const router = useRouter();
+
+  const handleBookNowClick = () => {
+  if (isSignedIn) {
+    // User is signed in, proceed to booking page
+    router.push(`/book/${selectedRoom.id}`);
+  } else {
+    // User is NOT signed in, redirect to sign-in page
+    router.push('/sign-in');
+  }
+};
+
   return (
     <section className="bg-[#131322] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -71,8 +87,8 @@ const Room = () => {
               <button
                 onClick={() => setSelectedRoom(room)}
                 className={`hover:cursor-pointer text-lg md:text-xl font-semibold mx-4 px-2 py-1 transition-colors duration-300 focus:outline-none ${selectedRoom.id === room.id
-                    ? 'text-amber-600 dark:text-amber-500'
-                    : 'text-gray-500 hover:text-amber-600 dark:hover:text-amber-500'
+                  ? 'text-amber-600 dark:text-amber-500'
+                  : 'text-gray-500 hover:text-amber-600 dark:hover:text-amber-500'
                   }`}
               >
                 {room.name}
@@ -109,9 +125,11 @@ const Room = () => {
             </p>
 
             <div className="mt-auto pt-8">
-              <Link href={`/book/${selectedRoom.id}`} className="w-full sm:w-auto inline-block bg-amber-600 text-white font-bold text-lg py-3 px-8 rounded-lg shadow-lg hover:bg-amber-700 transition-all duration-300 transform hover:cursor-pointer hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 lg:mb-50 text-center">
-                Book Now
-              </Link>
+              <button className="w-full sm:w-auto inline-block bg-amber-600 text-white font-bold text-lg py-3 px-8 rounded-lg shadow-lg hover:bg-amber-700 transition-all duration-300 transform hover:cursor-pointer hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 lg:mb-50 text-center" onClick={handleBookNowClick}>
+                Book Now  
+              </button>
+          
+              
             </div>
           </div>
         </div>

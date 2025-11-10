@@ -5,9 +5,6 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useUser } from '@clerk/nextjs';
 
-
-
-
 import {
   ClerkProvider,
   SignInButton,
